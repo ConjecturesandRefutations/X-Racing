@@ -1,0 +1,676 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800&family=VT323&');
+
+*{
+    font-family: poppins;
+}
+
+html, body, .opening-section {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+  }
+
+  #title{
+    color: red;
+  }
+
+.opening-section{
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background-image: url('images/racing.jpg'); 
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
+
+.opening-text{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%);
+    font-weight: bolder;
+    font-size: large;
+    color: whitesmoke;
+}
+
+.opening-text > p,
+.opening-text > h1 {
+  background-color: black;
+  border-radius: 5px;
+  white-space: nowrap;
+  margin: 10px;
+}
+
+.selectHeader{
+  background-color: black;
+  border-radius: 5px;
+}
+
+#yellow{
+  color: yellow;
+}
+
+#blue{
+  color: blue;
+}
+
+#red{
+  color: red;
+}
+
+.timer{
+  position: absolute;
+  left: 50px;
+  bottom: 50px;
+  color:white;
+  display: flex;
+  flex-direction: column;
+}
+
+#countdown{
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.checkbox{
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 3px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+  }
+  
+
+
+button{
+  cursor: pointer;
+  background-color: red;
+  padding: 5px;
+  font-size: larger;
+  border-radius: 5px;
+}
+
+button:hover{
+  background-color: black;
+  color: red;
+}
+
+#canvas{
+    position: absolute;
+    border: 2px solid red;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.full-time{
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background-image: url('images/crash.jpeg'); 
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
+
+#fifty{
+  color: red;
+  font-size: larger;
+}
+
+.full-time-text{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
+  font-weight: bolder;
+  font-size: 20px;
+  color: whitesmoke;
+}
+
+.full-time-text > p {
+  background-color: black;
+  border-radius: 5px;
+
+}
+
+.info{
+  margin-top: 50px;
+  margin-left: 50px;
+  font-size: xx-large;
+  font-weight: bold;
+  color: red;
+}
+
+.level{
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+
+#level{
+  color: blue;
+  font-size: 100px;
+}
+
+#yourScore{
+  color: yellow;
+  font-size: 50px;
+}
+
+.utilityButtons{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.stats{
+  z-index: 9999;
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  font-size: xx-large;
+}
+
+#scoreTwo{
+  color: red;
+  font-size: 50px;
+}
+
+#levelTwo{
+  color: blue;
+  font-size: 50px;
+}
+
+.play-music{
+  cursor: pointer;
+  position: absolute;
+  color: white;
+  background-color: black;
+  padding: none;
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+}
+
+.fa{margin-top: 20px;}
+
+#sound{
+  color: red;
+}
+
+.music-credit{
+  position: absolute;
+  color: white;
+  left: 5px;
+  bottom: 0px;
+  font-size: x-small;
+}
+
+.closing-credits{
+  position: absolute;
+  color: white;
+  left: 5px;
+  top: 0px;
+  font-size: x-small;
+}
+
+#left,
+#right{
+  font-size: 60px;
+  white-space: nowrap;
+  margin: 20px;
+  width: 75px;
+}
+#left:hover,
+#right:hover{
+  background-color: red;
+  color: black;
+}
+
+#loading-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  color: yellow;
+}
+
+#bonus{
+  width: 70px;
+  height: 50px;
+}
+
+#skull{
+  width: 70px;
+  height: 50px;
+}
+
+.bonus{
+  white-space: nowrap;
+  color: greenyellow;
+}
+
+.skull{
+  white-space: nowrap;
+  color: darkred;
+}
+
+.bonus-indicator {
+  position: absolute;
+  font-size: 40px;
+  color: yellowgreen;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 9999;
+}
+
+.skull-indicator {
+  position: absolute;
+  font-size: 40px;
+  color: red;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 9999;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.mobile-controls{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 0;
+  gap: 50px;
+  white-space: nowrap;
+}
+
+.boxes{
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+}
+
+.boxes > p {
+  background-color: black;
+}
+
+.login{
+  background-color: white;
+  color: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login:hover{
+  color: white;
+  background-color: transparent;
+}
+
+@media(max-width:630px){
+.opening-text  {
+  width: 90%;
+}
+.opening-text > p,
+.opening-text > h1 {
+  white-space: normal;
+}
+.music-credit{
+  display: none;
+}
+}
+
+@media(min-width:1060px){
+  .mobile-controls{
+    display: none;
+  }
+}
+
+@media(max-width:1060px){
+  #canvas  {
+    width: 60%;
+    height: 60%;
+  }
+  .stats{
+    top: 0px;
+    left: 0px;
+  }
+  .score{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+  .level{
+    right: 5px;
+    bottom: 30vh;
+    top: auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  #level{
+    font-size: 50px;
+  }
+  .timer{
+    left: 0px;
+    bottom: 30vh;
+  }
+  }
+
+
+  @media(max-width:600px){
+    .opening-text > p,
+  .opening-text > h1 {
+    margin: 5px;
+}
+  }
+
+  @media(max-width:350px){
+
+    #skull{
+      max-width: 50px;
+    }
+    #bonus{
+      max-width: 50px;
+    }
+      }
+
+  @media(max-width:300px){
+    .opening-text > p,
+  .opening-text > h1 {
+    margin: 0px;
+}
+.level{
+  font-size: 15px;
+}
+#skull{
+  max-width: 30px;
+}
+#bonus{
+  max-width: 30px;
+}
+  }
+
+
+@media(max-width:506px){
+  .login{
+    font-size: small;
+  }
+  .audio  {
+    display: none;
+}
+.fa{
+  font-size: 60px;
+  margin-top: 0;
+}
+}
+ 
+@media(max-width:450px){
+.fa{
+  font-size: 50px;
+}
+}
+
+@media(max-width:330px){
+  .fa{
+    font-size: 40px;
+    margin-top: 10px;
+  }
+}
+
+/* FOR THE LOGIN PAGE */
+
+@keyframes pan {
+ 100% {
+    background-position: 15% 50%;
+     }
+}
+
+.login-page {
+  font-family: poppins, consolas;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  background-image: url(./images/racing-lights.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: none;
+  animation: pan 6s infinite alternate linear;
+  height: 100vh; 
+  width: 100%; 
+  margin: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+ }
+
+@media (min-width: 500px) {
+    .login-page {
+      padding: 0;
+    }
+}
+
+.login-card {
+  width: 400px;
+  padding: 20px 30px 44px;
+  border-radius: 24px;
+  background: #ffffff;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .login-card {
+    margin: 0;
+    width: 400px;
+  }
+}
+
+
+@media (max-width: 450px) {
+  .login-card {
+    margin: 0;
+    width: 350px;
+  }
+}
+
+@media (max-width: 400px) {
+  .login-card {
+    margin: 0;
+    width: 300px;
+  }
+}
+
+@media (max-width: 360px) {
+  .login-card {
+    margin: 0;
+    width: 280px;
+  }
+}
+
+@media (max-width: 328px) {
+  .login-card {
+    margin: 0;
+    width: 270px;
+  }
+}
+
+@media (max-width: 300px) {
+  .login-card {
+    margin: 0;
+    width: 250px;
+  }
+}
+
+@media (max-width: 310px) {
+  .login-card {
+    margin: 0;
+    width: 240px;
+  }
+}
+
+@media (max-width: 290px) {
+  .login-card {
+    margin: 0;
+    width: 230px;
+  }
+}
+
+@media (max-width: 280px) {
+  .login-card {
+    margin: 0;
+    width: 210px;
+  }
+}
+
+@media (max-width: 275px) {
+  .login-card {
+    margin: 0;
+    width: 200px;
+  }
+}
+
+.loginSignup{
+  margin-bottom: 0px; 
+}
+
+  .login-card > h3 {
+  margin: 0 0 30px;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.login-form {
+  width: 100%;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.login-form > a {
+  color: #216ce7;
+}
+
+.login-form > input,
+.login-form > button {
+  height: 56px;
+  padding: 0 16px;
+  border-radius: 8px;
+}
+
+.login-form > input {
+  border: 2px solid #ebebeb;
+}
+
+.loginBtn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  background-color: #ff6b6b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.loginBtn:hover {
+  background-color: #ff4040;
+}
+
+.loginBtn:active {
+  background-color: #ff1f1f;
+}
+
+.loginBtn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.4);
+}
+
+
+.back-home{
+  background-color: transparent;
+  color: white;
+  font-size: small;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid white;
+  text-decoration: none;
+    }
+
+.back-home:hover{
+  border: none;
+    }
+
+.note{
+  font-size: smaller;
+    }
+
+.error{
+  color: red;
+}
+
+.welcome{
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  margin: 0;
+  color: white;
+  font-size: large;
+  text-decoration: none;
+}
+
+#logout{ 
+  padding: none;
+  background-color: white;
+}
+
+#logout:hover{ 
+  padding: none;
+  background-color: transparent;
+  color: white;
+}
+
+#logout-anchor{
+  text-decoration: none;
+}
+
+#logout-anchor:hover{
+  color: white;
+}
