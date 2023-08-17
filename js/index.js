@@ -312,6 +312,7 @@ function resetScore() {
         timer.style.display = 'none';
         scoreTwo.innerText = currentGame.score;
         levelTwo.innerText = currentGame.level;
+        //Start handling the save score functionality
       }
 
       if (!isGameOver) {
