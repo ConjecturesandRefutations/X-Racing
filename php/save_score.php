@@ -11,7 +11,7 @@ $user_id = $_SESSION["user_id"];
 $mysqli = require __DIR__ . "/database.php";
 
 // Insert score into the score table
-$score_sql = "INSERT INTO score (user_id, scores) VALUES (?, ?)";
+$score_sql = "INSERT INTO scores (user_id, score) VALUES (?, ?)";
 $score_stmt = $mysqli->prepare($score_sql);
 $score_stmt->bind_param("is", $user_id, $score);
 $score_stmt->execute();
