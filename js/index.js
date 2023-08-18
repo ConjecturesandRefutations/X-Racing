@@ -312,7 +312,18 @@ function resetScore() {
         timer.style.display = 'none';
         scoreTwo.innerText = currentGame.score;
         levelTwo.innerText = currentGame.level;
-        //Start handling the save score functionality
+
+        // AJAX request to save score
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', './php/save_score.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // Score saved successfully
+            }
+        };
+        xhr.send('score=' + currentGame.score);
+
       }
 
       if (!isGameOver) {

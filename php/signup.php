@@ -24,6 +24,8 @@ $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
 $mysqli = require __DIR__ . "/database.php";
 
+
+
 // Check if a user with the same name already exists
 $check_sql = "SELECT COUNT(*) FROM user WHERE name = ?";
 $check_stmt = $mysqli->prepare($check_sql);
