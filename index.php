@@ -119,11 +119,21 @@ if (isset($_SESSION["user_id"])) {
             <div class="stats">
                 <p id="finalScore">Final Score: <span id="scoreTwo">0</span>&ensp;&ensp;
                 <p id="finalLevel">Level: <span id="levelTwo">1</span></p>
+             </div>
+
+             <div class="all-together">
+                <a href="php/top-scores.php">All-Time Top 10 Scores</a>
+                <?php if ($user): ?>
+                    <a href="php/user-top-scores.php">Your 10 Best Scores</a>
+                <?php endif; ?> 
+                <?php ?>
             </div>
+            
             <div class="utilityButtons">
             <button id="restart-button" class="try-again-button">Restart</button>
             <button class="main-menu-button">Main Menu</button>  
-        </div>
+            </div>
+
          </div>
          
         <article class="closing-credits"><p>Closing Music from #Uppbeat (free for Creators!):<br/>

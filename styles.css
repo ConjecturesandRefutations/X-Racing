@@ -745,3 +745,14 @@ th, td {
   text-decoration: none;
   margin-bottom: 5px;
 }
+
+.all-together{
+  display: flex;
+  flex-direction: row;
+}
+
+.all-together > a{
+  color: gold;
+  background-color: black;
+  font-size: smaller;
+}
