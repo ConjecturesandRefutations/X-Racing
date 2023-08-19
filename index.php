@@ -40,12 +40,20 @@ if (isset($_SESSION["user_id"])) {
              <?php echo $user ? 'LOGOUT' : 'LOGIN to save your score'; ?>
         </a>
 
+        <div class="top-ten-anchor">
+        <a href="php/top-scores.php">All-Time Top 10 Scores</a>
+            <?php if ($user): ?>
+                <a href="php/user-top-scores.php">Your 10 Best Scores</a>
+            <?php endif; ?> 
+            <?php ?>
+        </div>
+
             <div class="opening-text">
 
                 <h1 id="title">X-Racing</h1>
 
-                <p>Do you have what it takes to become the next Ayrton Senna?!</p>
-                <p>Every <span id="fifty">20 seconds</span>, the game gets harder!</p>
+                <p  class="hide">Do you have what it takes to become the next Ayrton Senna?!</p>
+                <p class="hide">Every <span id="fifty">20 seconds</span>, the game gets harder!</p>
                 <div class="boxes"><p class="bonus"><img src="./images/bonus-box.png" id="bonus" alt="bonus box icon"> +50 points</p>   <p class="skull"><img src="./images/skull.png" id="skull" alt="skull icon"> -50 points</p></div>
 
                 <p>Use the <img src="./images/computer arrows.png" alt="arrows" id="arrows" width="40" height="40"> buttons to move the car. How long before you crash?!</p>
@@ -68,8 +76,12 @@ if (isset($_SESSION["user_id"])) {
                     </div>
                   </article>
 
+                  <div class="top-ten-mobile">
+                    <a href="php/top-scores.php">All-Time Top 10</a>
+                    <a href="php/user-top-scores.php">Your Top 10</a>
+                  </div>
+
                 <button id="start-button">StartGame</button>
-                <a class="top-10-anchor" href="php/top-scores.php">Top 10 Scores</a>
 
              </div>
 

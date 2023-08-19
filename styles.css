@@ -698,6 +698,50 @@ th, td {
 }
 
 .top-ten-anchor{
-  color: white;
+  position: absolute;
+  background-color: black;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.top-ten-anchor > a {
+  color: gold;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.top-ten-mobile{
+  display: none;
+  margin-bottom: 5px;
+  white-space: nowrap;
+}
+
+.top-ten-mobile > a {
+  color: gold;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+@media(max-width:914px){
+  .hide{
+    display: none;
+  }
+  .top-ten-anchor{
+    display: none;
+  }
+  .top-ten-mobile{
+    display: block;
+    background-color: black;
+  }
+}
+
+.score-back{
+  background-color: red;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  position: fixed;
   text-decoration: none;
+  margin-bottom: 5px;
 }

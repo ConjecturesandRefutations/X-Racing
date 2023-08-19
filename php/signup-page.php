@@ -11,7 +11,7 @@
 
     <div class="login-page">
 
-    <a href="../index.php" class='back-home'>Play without Logging in </br><span class='note'>(your score won't be saved)</span></a>    
+    <a href="../index.php" class='back-home'>Go Back </a>    
     
         <div class="login-card">
     
