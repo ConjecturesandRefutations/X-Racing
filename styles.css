@@ -674,3 +674,30 @@ button:hover{
 #logout-anchor:hover{
   color: white;
 }
+
+/* TOP 10 SCORES STYLES */
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 20px auto;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  color: white;
+}
+
+.top-ten{
+  color: white;
+}
+
+.top-ten-anchor{
+  color: white;
+  text-decoration: none;
+}

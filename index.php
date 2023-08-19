@@ -69,6 +69,7 @@ if (isset($_SESSION["user_id"])) {
                   </article>
 
                 <button id="start-button">StartGame</button>
+                <a class="top-10-anchor" href="php/top-scores.php">Top 10 Scores</a>
 
              </div>
 
@@ -112,6 +113,7 @@ if (isset($_SESSION["user_id"])) {
             <button class="main-menu-button">Main Menu</button>  
         </div>
          </div>
+         
         <article class="closing-credits"><p>Closing Music from #Uppbeat (free for Creators!):<br/>
             https://uppbeat.io/t/claude-patterns/pattern-22<br/>
             License code: O5BXHKFUKHABKGG0</p></article>

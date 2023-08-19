@@ -183,13 +183,9 @@ function resetScore() {
           randomSkullY,
           randomSkullWidth,
           randomSkullHeight,
-          console.log("Generating skull")
       );
   
-      currentGame.skulls.push(newSkull);
-      console.log(currentGame.skulls.length);
-
-        
+      currentGame.skulls.push(newSkull);        
   
       // Reset the skull frequency counter
       skullFrequency = 0;
@@ -313,7 +309,13 @@ function resetScore() {
         scoreTwo.innerText = currentGame.score;
         levelTwo.innerText = currentGame.level;
 
-        // AJAX request to save score
+        // Create a JavaScript Date object to get the current date and time
+        var currentDate = new Date();
+
+        // Convert the date to a string in a format that PHP can parse (e.g., ISO 8601)
+        var isoDate = currentDate.toISOString();
+
+        // AJAX request to save score with the current DateTime
         var xhr = new XMLHttpRequest();
         xhr.open('POST', './php/save_score.php', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -322,7 +324,8 @@ function resetScore() {
                 // Score saved successfully
             }
         };
-        xhr.send('score=' + currentGame.score);
+        // Pass both score and DateTime stamp as POST parameters
+        xhr.send('score=' + currentGame.score + '&timestamp=' + isoDate);
 
       }
 

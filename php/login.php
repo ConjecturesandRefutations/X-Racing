@@ -17,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $result = $mysqli->query($sql);
 
     $user = $result->fetch_assoc();
-    print_r($user);
 
     if ($user) {
         if (password_verify($_POST["password"], $user["password_hash"])) {
