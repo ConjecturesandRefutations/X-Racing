@@ -105,6 +105,12 @@ function startGame() {
 const restartButton = document.querySelector('#restart-button');
 restartButton.addEventListener('click', restartGame);
 
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 13 && isGameOver) {
+    restartGame();
+  }
+});
+
 function restartGame() {
   if (isRestarting) return;
   isRestarting = true;
