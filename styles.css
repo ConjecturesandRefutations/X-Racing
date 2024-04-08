@@ -23,6 +23,7 @@ html, body, .opening-section {
   background-image: url('images/racing.jpg'); 
   background-repeat: no-repeat; 
   background-size: cover;
+  background-position: center;
 }
 
 .opening-text{
@@ -85,6 +86,7 @@ html, body, .opening-section {
     border-radius: 3px;
     margin-right: 10px;
     margin-bottom: 30px;
+    cursor: pointer;
   }
   
 
@@ -203,7 +205,7 @@ button:hover{
   border-radius: 5px;
 }
 
-.fa{margin-top: 20px;}
+.fa,.fas{margin-top: 20px;}
 
 #sound{
   color: red;
@@ -284,7 +286,7 @@ button:hover{
 }
 
 .hidden {
-  opacity: 0;
+  display: none;
 }
 
 .mobile-controls{
@@ -307,7 +309,7 @@ button:hover{
 }
 
 .login{
-  background-color: white;
+  background-color: red;
   color: black;
   position: absolute;
   top: 0;
@@ -338,8 +340,14 @@ button:hover{
 }
 }
 
-@media(min-width:1060px){
+@media(min-width:1111px){
   .mobile-controls{
+    display: none;
+  }
+}
+
+@media(max-width:1111px){
+  .enter-button{
     display: none;
   }
 }
@@ -422,20 +430,20 @@ button:hover{
   .audio  {
     display: none;
 }
-.fa{
+.fa,.fas{
   font-size: 60px;
   margin-top: 0;
 }
 }
  
 @media(max-width:450px){
-.fa{
+.fa,.fas{
   font-size: 50px;
 }
 }
 
 @media(max-width:330px){
-  .fa{
+  .fa,.fas{
     font-size: 40px;
     margin-top: 10px;
   }
@@ -453,8 +461,6 @@ button:hover{
   font-family: poppins, consolas;
   display: grid;
   place-items: center;
-  margin: 0;
-  padding: 0;
   background-image: url(./images/racing-lights.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -462,9 +468,8 @@ button:hover{
   animation: pan 6s infinite alternate linear;
   height: 100vh; 
   width: 100%; 
-  margin: 0;
   overflow: hidden;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -684,17 +689,17 @@ table {
 }
 
 table, th, td {
-  border: 1px solid #ddd;
+  border: 1px solid gold;
 }
 
 th, td {
   padding: 10px;
   text-align: left;
-  color: white;
+  color: gold;
 }
 
 .top-ten{
-  color: white;
+  color: gold;
 }
 
 .top-ten-anchor{
@@ -755,4 +760,17 @@ th, td {
   color: gold;
   background-color: black;
   font-size: smaller;
+}
+
+.enter-button{
+    color:white; 
+    background:black;
+    margin-top: 5px;
+}
+
+@media(min-width:714px){
+  .all-together > a{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
