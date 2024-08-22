@@ -23,7 +23,8 @@ function handleColorChange(event) {
 
 function addTouchListeners() {
   // Touch event handling for leftButton
-  currentCar.leftButton.ontouchstart = () => {
+  currentCar.leftButton.ontouchstart = (event) => {
+    event.preventDefault();
     currentCar.leftButtonDown = true;
     currentCar.throttledLeftStart();
   };
@@ -34,7 +35,8 @@ function addTouchListeners() {
   };
 
   // Touch event handling for rightButton
-  currentCar.rightButton.ontouchstart = () => {
+  currentCar.rightButton.ontouchstart = (event) => {
+    event.preventDefault();
     currentCar.rightButtonDown = true;
     currentCar.throttledRightStart();
   };
@@ -74,6 +76,9 @@ class Car {
       this.width = 30;
       this.height = 50;
       this.img = this.getImagePath();
+      this.rotation = 0; // Rotation angle in degrees
+
+
         // Variables to track button presses
         this.leftButtonDown = false;
         this.rightButtonDown = false;
@@ -114,11 +119,17 @@ class Car {
       }
     }
 
-    drawCar(){
-      const carImg = new Image();
-      carImg.src = this.img;
-      ctx.drawImage(carImg, this.x, this.y, this.width, this.height);
-    }
+    drawCar() {
+    const carImg = new Image();
+    carImg.src = this.img;
+    
+    // Rotate the canvas context to match the car's rotation
+    ctx.save(); // Save the current context state
+    ctx.translate(this.x + this.width / 2, this.y + this.height / 2); // Move the context to the car's center
+    ctx.rotate((this.rotation * Math.PI) / 180); // Rotate the context
+    ctx.drawImage(carImg, -this.width / 2, -this.height / 2, this.width, this.height); // Draw the car image
+    ctx.restore(); // Restore the context to its original state
+  }
 
     handleKeyDown(event) {
       if (event.keyCode === 37) {
@@ -159,9 +170,11 @@ startMovingCar(direction) {
     // Move the car continuously as long as the corresponding button is pressed
     if (direction === 'left' && this.leftButtonDown && this.x > 5) {
       this.x -= 3;
+      this.rotation = -17;
       turn.play();
     } else if (direction === 'right' && this.rightButtonDown && this.x < myCanvas.width - 35) {
       this.x += 3;
+      this.rotation = 17;
       turn.play();
     }
 
@@ -175,6 +188,7 @@ startMovingCar(direction) {
     // Stop the car's movement when both buttons are released
     if (!this.leftButtonDown && !this.rightButtonDown) {
       cancelAnimationFrame(this.requestAnimationFrame);
+      this.rotation = 0;
     }
   }
 
