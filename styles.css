@@ -116,7 +116,7 @@ button:hover{
   width: 100vw;
   height: 100vh;
   display: block;
-  background-image: url('images/crash.jpeg'); 
+  background-image: url('images/car-crash.jpg'); 
   background-repeat: no-repeat; 
   background-size: cover;
 }
@@ -219,6 +219,18 @@ button:hover{
   font-size: x-small;
 }
 
+.backlink{
+  position: absolute;
+  color: white !important;
+  right: 5px;
+  bottom: 0px;
+  font-size: x-small;
+}
+
+.backlink a{
+    color: white !important;
+}
+
 .closing-credits{
   position: absolute;
   color: white;
@@ -275,6 +287,7 @@ button:hover{
   color: yellowgreen;
   transition: opacity 0.5s ease-in-out;
   z-index: 9999;
+  margin-left: 75px;
 }
 
 .skull-indicator {
@@ -323,8 +336,8 @@ button:hover{
 }
 
 .login:hover{
-  color: white;
-  background-color: transparent;
+    background: black;
+    color: red
 }
 
 @media(max-width:630px){
@@ -337,6 +350,9 @@ button:hover{
 }
 .music-credit{
   display: none;
+}
+.backlink{
+    left:5px;
 }
 }
 
@@ -682,25 +698,76 @@ button:hover{
 
 /* TOP 10 SCORES STYLES */
 
-table {
-  border-collapse: collapse;
-  width: 80%;
-  margin: 20px auto;
+/* Dark theme for the Top 10 table */
+.top-ten {
+    background-color: #121212;
+    color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
 }
 
-table, th, td {
-  border: 1px solid gold;
+.top-ten h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
 }
 
-th, td {
-  padding: 10px;
-  text-align: left;
-  color: gold;
+.top-ten table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 700px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
 }
 
-.top-ten{
-  color: gold;
+.top-ten th,
+.top-ten td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #333;
 }
+
+.top-ten th {
+    background-color: #2a2a2a;
+    color: #f5f5f5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.top-ten tr:nth-child(even) {
+    background-color: #252525;
+}
+
+.top-ten tr:hover {
+    background-color: #333333;
+}
+
+.top-ten td {
+    font-size: 15px;
+    color: #dddddd;
+}
+
+.top-ten .score-back {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 5px 10px;
+    background-color: #eb3f3f;
+    color: #f5f5f5;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+    position: fixed;
+    right: 3px;
+    bottom: 3px;
+}
+
+.top-ten .score-back:hover {
+    background-color: #444444;
+}
+
 
 .top-ten-anchor{
   position: absolute;
@@ -728,6 +795,37 @@ th, td {
   margin-left: 10px;
 }
 
+/* Add trophy emojis to the rank column (first <td>) */
+.top-ten table tr:nth-child(2) td:first-child::after {
+    content: " 🥇";
+}
+
+.top-ten table tr:nth-child(3) td:first-child::after {
+    content: " 🥈";
+}
+
+.top-ten table tr:nth-child(4) td:first-child::after {
+    content: " 🥉";
+}
+
+/* Center all table text */
+body.top-ten table th,
+body.top-ten table td {
+    text-align: center;
+}
+
+/* Add vertical lines between columns */
+body.top-ten table th,
+body.top-ten table td {
+    border-right: 1px solid #444; /* subtle dark grey line */
+}
+
+/* Remove the border on the last column */
+body.top-ten table th:last-child,
+body.top-ten table td:last-child {
+    border-right: none;
+}
+
 @media(max-width:914px){
   .hide{
     display: none;
@@ -739,16 +837,6 @@ th, td {
     display: block;
     background-color: black;
   }
-}
-
-.score-back{
-  background-color: red;
-  bottom: 0;
-  right: 0;
-  cursor: pointer;
-  position: fixed;
-  text-decoration: none;
-  margin-bottom: 5px;
 }
 
 .all-together{
@@ -768,9 +856,49 @@ th, td {
     margin-top: 5px;
 }
 
+.all-together > a{
+    white-space: nowrap
+}
+
 @media(min-width:714px){
   .all-together > a{
     margin-left: 10px;
     margin-right: 10px;
   }
+}
+
+@media(max-width:640px){
+    .stats{
+    display: flex;
+    flex-direction: column;
+}
+#finalScore,#finalLevel{
+    line-height: 1;
+    margin-top: 15px;
+    margin-bottom:15px;
+}
+.all-together{
+    display: flex;
+    flex-direction: column;
+}
+.all-together > a{
+    padding-bottom: 10px
+}
+}
+
+/* Mobile Friendly Table */
+@media (max-width: 640px) {
+    body.top-ten table {
+        width: 100%;      
+        font-size: 13px; 
+    }
+
+    body.top-ten table th,
+    body.top-ten table td {
+        padding: 8px 6px; 
+    }
+
+    body.top-ten h1 {
+        font-size: 25px;
+    }
 }
