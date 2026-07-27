@@ -337,7 +337,7 @@ button:hover{
 
 .login:hover{
     background: black;
-    color: red
+    color: red;
 }
 
 @media(max-width:630px){
@@ -629,6 +629,7 @@ button:hover{
 
 .loginBtn:hover {
   background-color: #ff4040;
+  color:white;
 }
 
 .loginBtn:active {
